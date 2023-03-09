@@ -1,0 +1,12 @@
+print('Hola mundo')
+archivo=open('hola.txt.txt','r')
+print(archivo.readline())
+print(archivo.readline())
+print(archivo.readline())
+print(archivo.readline())
+archivo.close()
+
+archivo=open('hola.txt.txt','a')
+nombre=input('Cual es tu nombre: ')
+archivo.write(nombre)
+archivo.close()
