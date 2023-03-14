@@ -4,8 +4,21 @@ function iniciarJuego() {
 }
 
 function seleccionarPersonaje() {
-    alert('SELECCIONAR TU PERSONAJE')
+    let input1=document.getElementById('Hipodoge')
+    let input2=document.getElementById('Capipepo')
+    let input3=document.getElementById('Ratigueya')
+    let spamJugador=document.getElementById('personaje-jugador')
+
+
+    if(input1.checked) {
+        spamJugador.innerHTML='HIPODOGE'
+    } else if(input2.checked){
+        spamJugador.innerHTML='CAPIPEPO'
+    }else if(input3.checked){
+        spamJugador.innerHTML='RATIGUEYA'
+    }else {
+        alert('SELECCIONA UN PERSONAJE')
+    }
 }
-let botonPersonaje=document.getElementById('boton-personaje')
-botonPersonaje.addEventListener('click', seleccionarPersonaje)
+
 window.addEventListener('load', iniciarJuego)
