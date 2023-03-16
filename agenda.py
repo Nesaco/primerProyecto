@@ -11,13 +11,28 @@ class contacto:
         self.email = email
 
     def __str__(self):
-        return f"nombre: {self.nombre}, telefono: {self.telefono}, email: {self.email}. "
+        return f"{self.nombre}, {self.telefono}, {self.email}"
 
 class agenda:
     
-    _lista = {'juan':contacto('juan',7879491362, 'hrvhriumxc')}
+    _lista={}
+    def __init__(self):
+        archivo=open('agenda.txt','r')
+        for linea in archivo.readlines():
+            info=linea.split(',')
+            if(len(info)>2):
+                nombre=info[0]
+                telefono=info[1]
+                email=info[2]
+                self._lista[nombre]=contacto(nombre, telefono, email)
+        archivo.close()
+
     def crear_contacto(self, nombre='', telefono=0, email=''):
+        archivo=open('agenda.txt','w')
         self._lista[nombre]=contacto(nombre, telefono, email)
+        for contact in self._lista:
+            archivo.write(f"{self._lista[contact]}\n")
+        archivo.close()
     
     def mostrar_contactos(self):
         for contacto in self._lista:
@@ -25,7 +40,8 @@ class agenda:
 
     def buscar_contacto(self,nombre):
             print(self._lista.get(nombre))
-    
+
+   
     
 
 menu = 0
