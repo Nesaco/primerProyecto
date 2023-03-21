@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>MOKEPON</title>
-        
-    </head>
-    <body>
-        <h1>MOKEPON 🔥💧🌻</h1>
-        <section id="Personaje">
-            <h2>Elige tu personaje: </h2>
-            <label for="Hipodoge">Hipodoge</label>
-            <input type="radio"name="personaje" id="Hipodoge"/>
-            <label for="Capipepo">Capipepo</label>
-            <input type="radio" name="personaje"id="Capipepo"/>
-            <label for="Ratigueya">Ratigueya</label>
-            <input type="radio" name="personaje"id="Ratigueya"/>
 
-            <button id="boton-personaje">Seleccionar</button>
-        </section>
+<head>
+    <meta charset="utf-8" />
+    <title>MOKEPON!</title>
+    <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-        <section id="seleccionar-ataque">
-            <h2>Elige tu ataque: </h2>           
+<body>
+    <h1>MOKEPON! 🔥💧🌻</h1>
+    <section id="seleccionar-personaje">
+        <h2>Elige tu personaje:</h2>
+        <label for="hipodoge">Hipodoge</label>
+        <input type="radio" name="personaje" id="hipodoge" />
+        <label for="capipepo">Capipepo</label>
+        <input type="radio" name="personaje" id="capipepo" />
+        <label for="ratigueya">Ratigueya</label>
+        <input type="radio" name="personaje" id="ratigueya" />
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque:</h2>
+        <p>Tu personaje <span id="personaje-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>La personaje <span id="personaje-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        <p>
+            <button id="boton-fuego">Fuego 🔥</button>
+            <button id="boton-agua">Agua 💧</button>
+            <button id="boton-tierra">Tierra 🌱</button>
+        </p>
+    </section>
+    <section id="mensajes">
+    </section>
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
+</body>
 
-            <p>Tu Personaje tiene <span id="personaje-jugador"></span> tiene <span>3</span> vidas</p>
-            <p>El personaje contrario tiene <span id="personaje-enemigo"></span> del enemigo tiene <span>3</span> vidas</p>
-            <p>
-                <button id="boton-fuego">Fuego 🔥</button>
-                <button id="boton-agua">Agua 💧</button>
-                <button id="boton.tierra">Tierra 🌻</button>
-            </p>
-        </section id="mensaje">
-        <section>
-            <p>Tu personaje ataco con 🌻, el personaje contrario 🔥.¡¡¡GANASTE!!!🎉🎊</p>
-        </section>
-        <section id="reiniciar">
-            <button id="boton reiniciar">Reiniciar</button>
-        </section>
-        <script src="./js/mokepon.js"></script>
-    </body>
-        
 </html>
