@@ -25,21 +25,21 @@ function seleccionarPersonajeJugador() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'block'
 
-    let inputHipodoge = document.getElementById('hipodoge')
+    let inputGato = document.getElementById('Gato')
 
-    let inputCapipepo = document.getElementById('capipepo')
+    let inputPerro = document.getElementById('Perro')
 
-    let inputRatigueya = document.getElementById('ratigueya')
+    let inputGallina = document.getElementById('Gallina')
 
     let spanPersonajeJugador = document.getElementById('personaje-jugador')
 
 
-    if (inputHipodoge.checked) { 
-        spanPersonajeJugador.innerHTML = 'Hipodoge' 
-    } else if (inputCapipepo.checked) { 
-        spanPersonajeJugador.innerHTML = 'Capipepo' 
-    } else if (inputRatigueya.checked) { 
-        spanPersonajeJugador.innerHTML = 'Ratigueya' 
+    if (inputGato.checked) { 
+        spanPersonajeJugador.innerHTML = 'Gato' 
+    } else if (inputPerro.checked) { 
+        spanPersonajeJugador.innerHTML = 'Perro' 
+    } else if (inputGallina.checked) { 
+        spanPersonajeJugador.innerHTML = 'Gallina' 
     } else { alert('Selecciona una personaje') }
     seleccionarPersonajeEnemigo()
 }
@@ -50,10 +50,10 @@ function seleccionarPersonajeEnemigo() {
     let spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
 
     if (personajeAleatoria == 1) { 
-        spanPersonajeEnemigo.innerHTML = 'Hipodoge' 
+        spanPersonajeEnemigo.innerHTML = 'Gato' 
     } else if (personajeAleatoria == 2) { 
-        spanPersonajeEnemigo.innerHTML = 'Capipepo' 
-    } else { spanPersonajeEnemigo.innerHTML = 'Ratigueya' }
+        spanPersonajeEnemigo.innerHTML = 'Perro' 
+    } else { spanPersonajeEnemigo.innerHTML = 'Gallina' }
 }
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'

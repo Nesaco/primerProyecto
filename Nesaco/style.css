@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import
+url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 body{
     font-family: 'Shadows Into Light', cursive;
@@ -29,11 +30,25 @@ body{
     gap: 10px;
 }
 
-.tarjeta-de-mokepon{
-    width: 100px;
+.tarjeta-de-Nesaco{
+    width: 249px;
     height: 100px;
-    background: #D27685;
+    background: #8c7ce3fa;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
+    display: flex;
+    color: #000000;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.tarjeta-de-Nesaco img {
+    width: 90px;
+}
+
+input{
+    display: none;
 }
