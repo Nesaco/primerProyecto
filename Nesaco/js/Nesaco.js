@@ -23,7 +23,7 @@ function seleccionarPersonajeJugador() {
     sectionSeleccionarPersonaje.style.display = 'none'
 
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block'
+    sectionSeleccionarAtaque.style.display = 'flex'
 
     let inputNegra = document.getElementById('Negra')
 
@@ -107,7 +107,12 @@ function revisarVidas() {
         crearMensajeFinal('Lo siento, perdiste 😥') } }
 
 function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('mensajes')
+
+    let sectionMensajes = document.getElementById('resultado')
+    let ataqueDelJugador = document.getElementById('ataque-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+
+
     let parrafo = document.createElement('p')
     parrafo.innerHTML = 'Tu personaje atacó con ' + ataqueJugador + ', las personaje del enemigo atacó con ' + ataqueEnemigo + '- ' + resultado
     sectionMensajes.appendChild(parrafo)
