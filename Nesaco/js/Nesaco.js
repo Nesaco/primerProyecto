@@ -25,21 +25,21 @@ function seleccionarPersonajeJugador() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'block'
 
-    let inputGato = document.getElementById('Gato')
+    let inputNegra = document.getElementById('Negra')
 
-    let inputPerro = document.getElementById('Perro')
+    let inputSath = document.getElementById('Sath')
 
-    let inputGallina = document.getElementById('Gallina')
+    let inputCookies = document.getElementById('Cookies')
 
     let spanPersonajeJugador = document.getElementById('personaje-jugador')
 
 
-    if (inputGato.checked) { 
-        spanPersonajeJugador.innerHTML = 'Gato' 
-    } else if (inputPerro.checked) { 
-        spanPersonajeJugador.innerHTML = 'Perro' 
-    } else if (inputGallina.checked) { 
-        spanPersonajeJugador.innerHTML = 'Gallina' 
+    if (inputNegra.checked) { 
+        spanPersonajeJugador.innerHTML = 'Negra' 
+    } else if (inputSath.checked) { 
+        spanPersonajeJugador.innerHTML = 'Sath' 
+    } else if (inputCookies.checked) { 
+        spanPersonajeJugador.innerHTML = 'Cookies' 
     } else { alert('Selecciona una personaje') }
     seleccionarPersonajeEnemigo()
 }
@@ -50,10 +50,10 @@ function seleccionarPersonajeEnemigo() {
     let spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
 
     if (personajeAleatoria == 1) { 
-        spanPersonajeEnemigo.innerHTML = 'Gato' 
+        spanPersonajeEnemigo.innerHTML = 'Negra' 
     } else if (personajeAleatoria == 2) { 
-        spanPersonajeEnemigo.innerHTML = 'Perro' 
-    } else { spanPersonajeEnemigo.innerHTML = 'Gallina' }
+        spanPersonajeEnemigo.innerHTML = 'Sath' 
+    } else { spanPersonajeEnemigo.innerHTML = 'Cookies' }
 }
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'
