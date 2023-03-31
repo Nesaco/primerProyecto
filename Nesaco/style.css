@@ -1,28 +1,39 @@
 
-@import
-url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600;700&family=Josefin+Sans:wght@700&family=Shadows+Into+Light&display=swap');
+
 
 body{
-    font-family: 'Shadows Into Light', cursive;
+    background-image: url("./imagenes/paisaje.jpg");
+    background-repeat: no-repeat;
+    background-size: 176%;
+    background-position: center center; 
+    font-family: 'Edu NSW ACT Foundation', cursive;
     background-color: #66347F;
-
-}
-#seleccionar-personaje{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh
+}
+
+#seleccionar-personaje:{
+    
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .titulo {
-    color:white;
+    text-align: center; 
+    color:rgb(19, 1, 1);
     font-size: 60px;
+    font-family: 'Shadows Into Light', cursive;
    
 }
 
 .subtitulo{
-    color:white;
-    
+    color:rgb(14, 1, 1);
+    text-align: center; 
 
 }
 .targetas{
@@ -31,22 +42,40 @@ body{
 }
 
 .tarjeta-de-Nesaco{
-    width: 249px;
-    height: 100px;
-    background: #8c7ce3fa;
+    
+    width: 253px;
+    height: 156px;
+    background: none;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
     color: #000000;
-    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: stretch;
+    align-items: center;
 }
+    
+
+
 
 .tarjeta-de-Nesaco img {
     width: 90px;
+
+}
+
+#boton-personaje{
+    width: 173px;
+    height: 46px;
+    border-radius: 20px;
+    background: none;
+    border: 1px solid;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 input{
