@@ -15,7 +15,7 @@ body{
     height: 100vh
 }
 
-#seleccionar-personaje:{
+#seleccionar-personaje{
     
         display: flex;
     justify-content: center;
