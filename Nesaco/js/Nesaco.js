@@ -110,12 +110,18 @@ function crearMensaje(resultado) {
 
     let sectionMensajes = document.getElementById('resultado')
     let ataqueDelJugador = document.getElementById('ataque-del-jugador')
-    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+    let ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu personaje atacó con ' + ataqueJugador + ', las personaje del enemigo atacó con ' + ataqueEnemigo + '- ' + resultado
-    sectionMensajes.appendChild(parrafo)
+    sectionMensajes.innerHTML=resultado
+    nuevoAtaqueDelJugador.innerHTML=ataqueDelJugador
+    nuevoAtaqueDelEnemigo.innerHTML=ataqueEnemigo
+    
+
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataqueDelEnemigo.appendChild(uevoAtaqueDelEnemigo)
 }
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById('mensajes')
