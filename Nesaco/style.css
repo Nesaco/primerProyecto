@@ -95,3 +95,11 @@ input{
     border-radius: 20px;
     font-family: 'Shadows Into Light', cursive;
 }
+
+#mesajes {   
+    width: 280px;
+    background: pink;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}

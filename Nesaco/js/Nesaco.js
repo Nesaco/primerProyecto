@@ -116,12 +116,12 @@ function crearMensaje(resultado) {
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
     sectionMensajes.innerHTML=resultado
-    nuevoAtaqueDelJugador.innerHTML=ataqueDelJugador
+    nuevoAtaqueDelJugador.innerHTML=ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML=ataqueEnemigo
     
 
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
-    ataqueDelEnemigo.appendChild(uevoAtaqueDelEnemigo)
+    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById('mensajes')
