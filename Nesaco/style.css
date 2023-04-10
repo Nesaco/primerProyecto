@@ -3,7 +3,7 @@
 
 
 body{
-    background-image: url("./imagenes/paisaje.jpg");
+    background-image: url("./imagenes/fondo-transformed.webp");
     background-repeat: no-repeat;
     background-size: 176%;
     background-position: center center; 
@@ -21,6 +21,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .titulo {
@@ -55,6 +56,8 @@ body{
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    font-size: 27px;
+    font-weight: bold;
 }
     
 
@@ -62,6 +65,7 @@ body{
 
 .tarjeta-de-Nesaco img {
     width: 90px;
+    
 
 }
 
@@ -76,6 +80,9 @@ body{
     margin-top: 30px;
     text-align: center;
     font-family: 'Shadows Into Light', cursive;
+    font-size: 35px;
+    font-weight: bold;
+
 }
 
 input{
@@ -94,12 +101,25 @@ input{
     box-sizing: border-box;
     border-radius: 20px;
     font-family: 'Shadows Into Light', cursive;
+    font-size: 27px;
+    font-weight: bold;
 }
 
-#mesajes {   
+#mensajes {   
     width: 280px;
-    background: pink;
+    background: transparent;
     padding: 20px;
     margin-top: 20px;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-style: groove;
+    border-color: black;
+    flex-direction: column;
 }
+
+#boton-reiniciar {
+    border: none;
+    color: #11468F;
+    font-family: 'Poppins', sans-serif;
+  }
