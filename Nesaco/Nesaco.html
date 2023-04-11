@@ -16,23 +16,25 @@
         <h1 class="titulo">NESACO</h1>
         <h2 class="subtitulo">Elige tu personaje:</h2>
         <div class="targetas">
+            
+        <input type="radio" name="personaje" id="Negra" />  
         <label class="tarjeta-de-Nesaco" for="Negra">
             <p>Negra</p>
             <img src="./imagenes/Negra.png" alt="Negra">
         </label>
-        <input type="radio" name="personaje" id="Negra" />
 
+        <input type="radio" name="personaje" id="Sath" />
         <label class="tarjeta-de-Nesaco" for="Sath">
             <p>Sath</p>
             <img src="./imagenes/Sath.png" alt="Sath">
         </label>
-        <input type="radio" name="personaje" id="Sath" />
-
+        
+        <input type="radio" name="personaje" id="Cookies" />
         <label class="tarjeta-de-Nesaco" for="Cookies">
             <p>Cookies</p>
             <img src="./imagenes/Cookies.png" alt="Cookies">
         </label>
-        <input type="radio" name="personaje" id="Cookies" />
+        
         
 
         </div>
@@ -45,7 +47,7 @@
 
         <h2 class="subtitulo">Elige tu ataque:</h2>
 
-        <div>
+        <div class="targetas-ataques">
             <button id="boton-fuego" class="boton-de-ataque">Fuego</button>
             <button id="boton-agua" class="boton-de-ataque"> Agua</button>
             <button id="boton-tierra" class="boton-de-ataque">Tierra</button>
@@ -60,10 +62,19 @@
         </div>     
 
         <div>
-            <div  id="ataque-del-jugador"></div>
-            <div  id="ataques-del-enemigo"></div>
-            <p>Tu personaje <span id="personaje-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-            <p>La personaje <span id="personaje-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+            <div class="ataques">
+                <div class="ataques-jugador">
+                <p id="vidas-jugador">3</p>
+                <p id="personaje-jugador"></p> 
+                <div  id="ataque-del-jugador"></div>
+            </div>
+            <div class="ataques-enemigo">
+                <p id="vidas-enemigo">3</p>
+                <p id="personaje-enemigo"></p> 
+                <div  id="ataques-del-enemigo"></div>
+                
+            </div>
+            
         </div>
     </section>
 </body>

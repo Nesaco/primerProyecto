@@ -37,13 +37,12 @@ body{
     text-align: center; 
 
 }
-.targetas{
+.targetas, .targetas-ataques {
     display: flex;
     gap: 10px;
 }
 
 .tarjeta-de-Nesaco{
-    
     width: 253px;
     height: 156px;
     background: none;
@@ -52,13 +51,14 @@ body{
     border-radius: 20px;
     display: flex;
     color: #000000;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     font-size: 27px;
     font-weight: bold;
 }
+
     
 
 
@@ -86,7 +86,11 @@ body{
 }
 
 input{
-    display: none;
+    display: none; 
+}
+
+input:checked + label {
+    background-color: #c049cf;
 }
 
 #seleccionar-ataque{
@@ -122,4 +126,28 @@ input{
     border: none;
     color: #11468F;
     font-family: 'Poppins', sans-serif;
+  }
+
+  .ataques {
+    display: grid;
+    grid-template-columns: 100px 100px;
+  }
+
+  #vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0;
+  }
+
+  .ataques-jugador, .ataques-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+
+  @media (max-width: 360px) {
+    .targetas, .targetas-ataques {
+        flex-direction: column;
+    }
   }
