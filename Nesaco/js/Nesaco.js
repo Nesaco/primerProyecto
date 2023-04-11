@@ -20,10 +20,12 @@ const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
+const contenedorTarjetas=document.getElementById('contenedorTarjetas')
 
 let Nesacones= []
 let ataqueJugador
 let ataqueEnemigo
+let opcionNesacones
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -32,6 +34,7 @@ class Nesaco {
         this.nombre = nombre
         this.foto= foto
         this.vida=vida
+        this.ataques=[]
     }
 }
 
@@ -39,11 +42,49 @@ let Negra= new Nesaco('Negra','./imagenes/Negra.png',5)
 let Sath= new Nesaco('Sath','./imagenes/Sath.png',5)
 let Cookies=new Nesaco('Cookies','./imagenes/Cookies.png',5)
 
+Negra.ataques.push(
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'}
 
+)
+
+Sath.ataques.push(
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '💧', id:'boton-agua'}
+
+)
+
+Cookies.ataques.push(
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '🌱', id:'boton-tierra'}
+)
+
+Nesacones.push(Negra, Sath, Cookies)
 
 function iniciarJuego() {
     
     sectionSeleccionarAtaque.style.display = 'none'
+
+    Nesacones.forEach((Nesacon)=>{
+        opcionNesacones= `
+        <input type="radio" name="personaje" id=${Nesaco.nombre} />  
+        <label class="tarjeta-de-Nesaco" for=${Nesaco.nombre}>
+            <p>${Nesaco.nombre}/p>
+            <img src=${Nesaco.foto} alt=${Nesaco.nombre}>
+        </label>
+        `
+    contenedorTarjetas.innerHTML=opcionNesacones
+
+    })
     sectionReiniciar.style.display = 'none'    
     botonPersonajeJugador.addEventListener('click', seleccionarPersonajeJugador)    
     botonFuego.addEventListener('click', ataqueFuego)
@@ -57,15 +98,6 @@ function seleccionarPersonajeJugador() {
 
     
     sectionSeleccionarAtaque.style.display = 'flex'
-
-    
-
-    
-
-    
-
-    
-
 
     if (inputNegra.checked) { 
         spanPersonajeJugador.innerHTML = 'Negra' 
