@@ -21,11 +21,26 @@ const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 
-
+let Nesacones= []
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
+
+class Nesaco {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto= foto
+        this.vida=vida
+    }
+}
+
+let Negra= new Nesaco('Negra','./imagenes/Negra.png',5) 
+let Sath= new Nesaco('Sath','./imagenes/Sath.png',5)
+let Cookies=new Nesaco('Cookies','./imagenes/Cookies.png',5)
+
+
+
 function iniciarJuego() {
     
     sectionSeleccionarAtaque.style.display = 'none'
