@@ -8,9 +8,7 @@ const botonReiniciar = document.getElementById('boton-reiniciar')
 
 const sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
 
-const inputNegra = document.getElementById('Negra')
-const inputSath = document.getElementById('Sath')
-const inputCookies = document.getElementById('Cookies')
+
 const spanPersonajeJugador = document.getElementById('personaje-jugador')
 const spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
 
@@ -22,10 +20,13 @@ const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas=document.getElementById('contenedorTarjetas')
 
-let Nesacones= []
+let nesacones= []
 let ataqueJugador
 let ataqueEnemigo
 let opcionNesacones
+let inputNegra
+let inputSath
+let inputCookies
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -38,11 +39,11 @@ class Nesaco {
     }
 }
 
-let Negra= new Nesaco('Negra','./imagenes/Negra.png',5) 
-let Sath= new Nesaco('Sath','./imagenes/Sath.png',5)
-let Cookies=new Nesaco('Cookies','./imagenes/Cookies.png',5)
+let negra= new Nesaco('Negra','./imagenes/Negra.png',5) 
+let sath= new Nesaco('Sath','./imagenes/Sath.png',5)
+let cookies=new Nesaco('Cookies','./imagenes/Cookies.png',5)
 
-Negra.ataques.push(
+negra.ataques.push(
     {nombre: '💧', id:'boton-agua'},
     {nombre: '💧', id:'boton-agua'},
     {nombre: '💧', id:'boton-agua'},
@@ -51,7 +52,7 @@ Negra.ataques.push(
 
 )
 
-Sath.ataques.push(
+sath.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
     {nombre: '🌱', id:'boton-tierra'},
@@ -60,7 +61,7 @@ Sath.ataques.push(
 
 )
 
-Cookies.ataques.push(
+cookies.ataques.push(
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
     {nombre: '🔥', id:'boton-fuego'},
@@ -68,21 +69,25 @@ Cookies.ataques.push(
     {nombre: '🌱', id:'boton-tierra'}
 )
 
-Nesacones.push(Negra, Sath, Cookies)
+nesacones.push(negra, sath, cookies)
 
 function iniciarJuego() {
     
     sectionSeleccionarAtaque.style.display = 'none'
 
-    Nesacones.forEach((Nesacon)=>{
+    nesacones.forEach((nesaco)=>{
         opcionNesacones= `
-        <input type="radio" name="personaje" id=${Nesaco.nombre} />  
-        <label class="tarjeta-de-Nesaco" for=${Nesaco.nombre}>
-            <p>${Nesaco.nombre}/p>
-            <img src=${Nesaco.foto} alt=${Nesaco.nombre}>
+        <input type="radio" name="personaje" id=${nesaco.nombre} />  
+        <label class="tarjeta-de-Nesaco" for=${nesaco.nombre}>
+            <p>${nesaco.nombre}</p>
+            <img src=${nesaco.foto} alt=${nesaco.nombre}>
         </label>
         `
-    contenedorTarjetas.innerHTML=opcionNesacones
+    contenedorTarjetas.innerHTML+=opcionNesacones
+
+        inputNegra = document.getElementById('Negra')
+        inputSath = document.getElementById('Sath')
+        inputCookies = document.getElementById('Cookies')
 
     })
     sectionReiniciar.style.display = 'none'    
