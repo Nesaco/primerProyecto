@@ -19,7 +19,7 @@ const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas=document.getElementById('contenedorTarjetas')
-
+const contenedorAtaques= document.getElementById('contenerdorAtaques')
 let nesacones= []
 let ataqueJugador
 let ataqueEnemigo
@@ -27,6 +27,8 @@ let opcionNesacones
 let inputNegra
 let inputSath
 let inputCookies
+let personajeJugador
+let ataquesNesaco
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -90,11 +92,10 @@ function iniciarJuego() {
         inputCookies = document.getElementById('Cookies')
 
     })
-    sectionReiniciar.style.display = 'none'    
+
+  
     botonPersonajeJugador.addEventListener('click', seleccionarPersonajeJugador)    
-    botonFuego.addEventListener('click', ataqueFuego)
-    botonAgua.addEventListener('click', ataqueAgua)
-    botonTierra.addEventListener('click', ataqueTierra)    
+  
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 function seleccionarPersonajeJugador() {
@@ -105,26 +106,47 @@ function seleccionarPersonajeJugador() {
     sectionSeleccionarAtaque.style.display = 'flex'
 
     if (inputNegra.checked) { 
-        spanPersonajeJugador.innerHTML = 'Negra' 
+        spanPersonajeJugador.innerHTML = inputNegra.id
+        personajeJugador=inputNegra.id
     } else if (inputSath.checked) { 
-        spanPersonajeJugador.innerHTML = 'Sath' 
+        spanPersonajeJugador.innerHTML = inputSath.id 
+        personajeJugador=inputSath.id
     } else if (inputCookies.checked) { 
-        spanPersonajeJugador.innerHTML = 'Cookies' 
-    } else { alert('Selecciona una personaje') }
+        spanPersonajeJugador.innerHTML = inputCookies.id
+        personajeJugador=inputCookies.id
+    } else { 
+        alert('Selecciona una personaje') 
+    }
+    extraerAtaques(personajeJugador)
     seleccionarPersonajeEnemigo()
 }
 
-
-function seleccionarPersonajeEnemigo() {
-    let personajeAleatoria = aleatorio(1, 3)
-    
-
-    if (personajeAleatoria == 1) { 
-        spanPersonajeEnemigo.innerHTML = 'Negra' 
-    } else if (personajeAleatoria == 2) { 
-        spanPersonajeEnemigo.innerHTML = 'Sath' 
-    } else { spanPersonajeEnemigo.innerHTML = 'Cookies' }
+function extraerAtaques(personajeJugador){
+    let ataques
+    for (let i = 0; i < nesacones.length; i++) {
+        if (personajeJugador === nesacones[i].nombre) {
+            ataques = nesacones[i].ataques
+        }
+        
+    }
+    mostrarAtaques(ataques)
 }
+
+function mostrarAtaques(ataques){
+    ataques.forEach((ataque)=> {
+        ataquesNesaco=`
+        <button id=${ataque.id}  class="boton-de-ataque">${ataque.nombre}
+        </button>
+        `;
+        contenedorAtaques.innerHTML += ataquesNesaco
+    })
+}
+function seleccionarPersonajeEnemigo() {
+    let personajeAleatoria = aleatorio(0, nesacones.length -1)
+
+    spanPersonajeEnemigo.innerHTML = nesacones [personajeAleatoria].nombre
+}
+
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'
     ataqueAleatorioEnemigo()
