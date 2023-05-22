@@ -19,7 +19,7 @@ const sectionMensajes = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas=document.getElementById('contenedorTarjetas')
-const contenedorAtaques= document.getElementById('contenerdorAtaques')
+const contenedorAtaques= document.getElementById('contenedorAtaques')
 let nesacones= []
 let ataqueJugador
 let ataqueEnemigo
