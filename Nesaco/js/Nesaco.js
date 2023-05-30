@@ -1,36 +1,36 @@
-const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-const sectionReiniciar = document.getElementById('reiniciar')
-const botonPersonajeJugador = document.getElementById('boton-personaje')
-const botonReiniciar = document.getElementById('boton-reiniciar')
-const sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
+const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+const sectionReiniciar = document.getElementById('reiniciar');
+const botonPersonajeJugador = document.getElementById('boton-personaje');
+const botonReiniciar = document.getElementById('boton-reiniciar');
+const sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje');
 
-const spanPersonajeJugador = document.getElementById('personaje-jugador')
-const spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
+const spanPersonajeJugador = document.getElementById('personaje-jugador');
+const spanPersonajeEnemigo = document.getElementById('personaje-enemigo');
 
-const spanVidasJugador = document.getElementById('vidas-jugador')
-const spanVidasEnemigo = document.getElementById('vidas-enemigo')
+const spanVidasJugador = document.getElementById('vidas-jugador');
+const spanVidasEnemigo = document.getElementById('vidas-enemigo');
 
-const sectionMensajes = document.getElementById('resultado')
-const ataqueDelJugador = document.getElementById('ataque-del-jugador')
-const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
-const contenedorTarjetas=document.getElementById('contenedorTarjetas')
-const contenedorAtaques= document.getElementById('contenedorAtaques')
+const sectionMensajes = document.getElementById('resultado');
+const ataqueDelJugador = document.getElementById('ataque-del-jugador');
+const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo');
+const contenedorTarjetas = document.getElementById('contenedorTarjetas');
+const contenedorAtaques = document.getElementById('contenedorAtaques');
 
-let nesacones= []
-let ataqueJugador
-let ataqueEnemigo
-let opcionNesacones
-let inputNegra
-let inputSath
-let inputCookies
-let personajeJugador
-let ataquesNesacon
-let botonFuego
-let botonAgua
-let botonTierra
-let botones=[]
-let vidasJugador = 3
-let vidasEnemigo = 3
+let nesacones = [];
+let ataqueJugador;
+let ataqueEnemigo;
+let opcionNesacones;
+let inputNegra;
+let inputSath;
+let inputCookies;
+let personajeJugador;
+let ataquesNesacon;
+let botonFuego;
+let botonAgua;
+let botonTierra;
+let botones = [];
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 class Nesaco {
     constructor(nombre, foto, vida) {
@@ -155,7 +155,9 @@ function mostrarAtaques(ataques){
 
 function secuenciaAtaque() {
     botones.forEach((boton) => {
-        boton.addEventListener('')
+        boton.addEventListener('click',(e) => { 
+        console.log(e)
+        })
     })
 }  
 
@@ -163,6 +165,7 @@ function seleccionarPersonajeEnemigo() {
     let personajeAleatoria = aleatorio(0, nesacones.length -1)
 
     spanPersonajeEnemigo.innerHTML = nesacones [personajeAleatoria].nombre
+    secuenciaAtaque()
 }
 
 function ataqueFuego() {
