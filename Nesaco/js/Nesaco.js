@@ -1,13 +1,8 @@
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 const botonPersonajeJugador = document.getElementById('boton-personaje')
-const botonFuego = document.getElementById('boton-fuego')
-const botonAgua = document.getElementById('boton-agua')
-const botonTierra = document.getElementById('boton-tierra')
 const botonReiniciar = document.getElementById('boton-reiniciar')
-
 const sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
-
 
 const spanPersonajeJugador = document.getElementById('personaje-jugador')
 const spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
@@ -20,6 +15,7 @@ const ataqueDelJugador = document.getElementById('ataque-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas=document.getElementById('contenedorTarjetas')
 const contenedorAtaques= document.getElementById('contenedorAtaques')
+
 let nesacones= []
 let ataqueJugador
 let ataqueEnemigo
@@ -28,7 +24,10 @@ let inputNegra
 let inputSath
 let inputCookies
 let personajeJugador
-let ataquesNesaco
+let ataquesNesacon
+let botonFuego
+let botonAgua
+let botonTierra
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -140,6 +139,16 @@ function mostrarAtaques(ataques){
         `;
         contenedorAtaques.innerHTML += ataquesNesaco
     })
+
+    botonFuego=document.getElementById('boton-fuego')
+    botonAgua=document.getElementById('boton-agua')
+    botonTierra=document.getElementById('boton-tierra')
+
+    botonFuego.addEventListener('click', ataqueFuego)
+    
+    botonAgua.addEventListener('click', ataqueAgua)
+    
+    botonTierra.addEventListener('click', ataqueTierra)
 }
 function seleccionarPersonajeEnemigo() {
     let personajeAleatoria = aleatorio(0, nesacones.length -1)
