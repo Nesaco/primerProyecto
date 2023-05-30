@@ -28,6 +28,7 @@ let ataquesNesacon
 let botonFuego
 let botonAgua
 let botonTierra
+let botones=[]
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -134,7 +135,7 @@ function extraerAtaques(personajeJugador){
 function mostrarAtaques(ataques){
     ataques.forEach((ataque)=> {
         ataquesNesaco=`
-        <button id=${ataque.id}  class="boton-de-ataque">${ataque.nombre}
+        <button id=${ataque.id}  class="boton-de-ataque BAtaque">${ataque.nombre}
         </button>
         `;
         contenedorAtaques.innerHTML += ataquesNesaco
@@ -143,13 +144,21 @@ function mostrarAtaques(ataques){
     botonFuego=document.getElementById('boton-fuego')
     botonAgua=document.getElementById('boton-agua')
     botonTierra=document.getElementById('boton-tierra')
+    botones=document.querySelectorAll('.BAtaque')
+
 
     botonFuego.addEventListener('click', ataqueFuego)
     
     botonAgua.addEventListener('click', ataqueAgua)
     
     botonTierra.addEventListener('click', ataqueTierra)
-}
+
+function secuenciaAtaque() {
+    botones.forEach((boton) => {
+        boton.addEventListener('')
+    })
+}  
+
 function seleccionarPersonajeEnemigo() {
     let personajeAleatoria = aleatorio(0, nesacones.length -1)
 
