@@ -1,0 +1,61 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'countSubstrings' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts STRING input_str as parameter.
+     */
+
+    public static int countSubstrings(String input_str) {
+    
+    // Write your code here
+    String[] teclado={"","ab","cde","fgh","ijk","lmn","opq","rst","uvw","xyz"};
+    int numero=0
+        int suma=0;
+        for (char letra : mensaje.toCharArray()) {
+    
+        for (int i = 1; i < teclado.length; i++) {
+            if (teclado[i].indexOf(letra) != -1) {
+                numero=i;
+            }
+        }
+suma = suma + numero;
+            }
+            cantidadletras=input_str.length;
+            operacion=suma%cantidadletras;
+            if (operacion==0){
+                
+            }
+        }
+}
+
+
+    
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String input_str = bufferedReader.readLine();
+
+        int result = Result.countSubstrings(input_str);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
